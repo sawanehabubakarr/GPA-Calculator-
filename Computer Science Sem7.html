@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="forms Style.css">
+
+    <title>CS GPA Calculator</title>
+</head>
+<body>
+    <h1>Calculate Your GPA</h1>
+    <form id="Unimak Cumulative GPA">
+        <label for="aw">Academic Writing Grade:</label>
+        <select id="aw" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="c">Calculus Grade:</label>
+        <select id="c" name="courseGrade">
+            <option value="">-- Select Grade Letter --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="cg">Computer Graphics Grade:</label>
+        <select id="cg" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="dm">Data Mining and Machine Learning Grade:</label>
+        <select id="dm" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="itm">IT Management and Entrepreneurship Grade:</label>
+        <select id="itm" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="ras">Routing and Switching Technology Grade:</label>
+        <select id="ras" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="sp">Statistical Package for Social Science (SPSS) Grade:</label>
+        <select id="sp" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <button type="button" onclick="calculateGPA()">Calculate GPA</button>
+    </form>
+
+    <p id="result"></p>
+<!--The script Code-->
+  <script>
+    function calculateGPA() {
+    // Define credit hours and grade points lookup tables
+    const creditHoursLookup = {
+        1: {
+            'A+': 5,
+            'A': 5,
+            'A-': 4.7,
+            'B+': 4.3,
+            'B': 4,
+            'B-': 3.7,
+            'C+': 3.3,
+            'C': 3,
+            'C-': 2.7,
+            'D': 2,
+            'E': 1,
+            'F': 0,
+            'ABS': 0
+        },
+        2: {
+            'A+': 10,
+            'A': 10,
+            'A-': 9.4,
+            'B+': 8.6,
+            'B': 8,
+            'B-': 7.4,
+            'C+': 6.6,
+            'C': 6,
+            'C-': 5.4,
+            'D': 4,
+            'E': 2,
+            'F': 0,
+            'ABS': 0
+        },
+        3: {
+            'A+': 15,
+            'A': 15,
+            'A-': 14.1,
+            'B+': 12.9,
+            'B': 12,
+            'B-': 11.1,
+            'C+': 9.9,
+            'C': 9,
+            'C-': 8.1,
+            'D': 6,
+            'E': 3,
+            'F': 0,
+            'ABS': 0
+        },
+        4: {
+            'A+': 20,
+            'A': 20,
+            'A-': 18.8,
+            'B+': 17.2,
+            'B': 16,
+            'B-': 14.8,
+            'C+': 13.2,
+            'C': 12,
+            'C-': 10.8,
+            'D': 8,
+            'E': 4,
+            'F': 0,
+            'ABS': 0
+        },
+
+    };
+
+    // Get user-selected letter grades and credit hours for each course
+    const grades = [
+        document.getElementById("aw").value,
+        document.getElementById("c").value,
+        document.getElementById("cg").value,
+        document.getElementById("dm").value,
+        document.getElementById("itm").value,
+        document.getElementById("ras").value,
+        document.getElementById("sp").value
+    ];
+
+    const creditHours = [3, 3, 3, 3, 3, 3, 3]; // Updated credit hours for 8 courses
+
+    // Check if any grade is empty
+    if (grades.some(grade => grade === "")) {
+        alert("Please select the letter grades for all the modules.");
+        return;
+    }
+
+    // Calculate total grade points and total credit hours
+    let totalGradePoints = 0;
+    let totalCreditHours = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        const creditHour = creditHours[i];
+        const gradePoint = creditHoursLookup[creditHour][grades[i]];
+        totalGradePoints += gradePoint;
+        totalCreditHours += creditHour;
+    }
+
+    // Calculate GPA
+    const gpa = totalGradePoints / totalCreditHours;
+
+    // Display the result
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = `Cumulative GPA: ${gpa.toFixed(2)}`;
+}
+
+  </script>
+
+</body>
+</html>

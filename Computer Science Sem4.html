@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="forms Style.css">
+
+    <title>CS GPA Calculator</title>
+</head>
+<body>
+    <h1>Calculate Your GPA</h1>
+    <form id="Unimak Cumulative GPA">
+        <label for="communication">Communication Skills Grade:</label>
+        <select id="communication" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="ds">Data Structure & Algorithm Grade:</label>
+        <select id="ds" name="courseGrade">
+            <option value="">-- Select Grade Letter --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="french">French Grade:</label>
+        <select id="french" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br> <label for="cs">Introduction to Cyber Security Grade:</label>
+        <select id="cs" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="os">Operating System 2 Grade:</label>
+        <select id="os" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <label for="p2">Programming 2 Grade:</label>
+        <select id="p2" name="courseGrade">
+            <option value="">-- Select Grade --</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="ABS">ABS</option>
+        </select><br>
+
+        <button type="button" onclick="calculateGPA()">Calculate GPA</button>
+    </form>
+
+
+    <p id="result"></p>
+<!--The script Code-->
+  <script>
+    function calculateGPA() {
+    // Define credit hours and grade points lookup tables
+    const creditHoursLookup = {
+        1: {
+            'A+': 5,
+            'A': 5,
+            'A-': 4.7,
+            'B+': 4.3,
+            'B': 4,
+            'B-': 3.7,
+            'C+': 3.3,
+            'C': 3,
+            'C-': 2.7,
+            'D': 2,
+            'E': 1,
+            'F': 0,
+            'ABS': 0
+        },
+        2: {
+            'A+': 10,
+            'A': 10,
+            'A-': 9.4,
+            'B+': 8.6,
+            'B': 8,
+            'B-': 7.4,
+            'C+': 6.6,
+            'C': 6,
+            'C-': 5.4,
+            'D': 4,
+            'E': 2,
+            'F': 0,
+            'ABS': 0
+        },
+        3: {
+            'A+': 15,
+            'A': 15,
+            'A-': 14.1,
+            'B+': 12.9,
+            'B': 12,
+            'B-': 11.1,
+            'C+': 9.9,
+            'C': 9,
+            'C-': 8.1,
+            'D': 6,
+            'E': 3,
+            'F': 0,
+            'ABS': 0
+        },
+        4: {
+            'A+': 20,
+            'A': 20,
+            'A-': 18.8,
+            'B+': 17.2,
+            'B': 16,
+            'B-': 14.8,
+            'C+': 13.2,
+            'C': 12,
+            'C-': 10.8,
+            'D': 8,
+            'E': 4,
+            'F': 0,
+            'ABS': 0
+        },
+
+    };
+
+    // Get user-selected letter grades and credit hours for each course
+    const grades = [
+        document.getElementById("communication").value,
+        document.getElementById("ds").value,
+        document.getElementById("french").value,
+        document.getElementById("cs").value,
+        document.getElementById("os").value,
+        document.getElementById("p2").value
+    ];
+
+    const creditHours = [2, 3, 2, 3, 3, 3]; // Updated credit hours for 8 courses
+
+    // Check if any grade is empty
+    if (grades.some(grade => grade === "")) {
+        alert("Please select the letter grades for all the modules.");
+        return;
+    }
+
+    // Calculate total grade points and total credit hours
+    let totalGradePoints = 0;
+    let totalCreditHours = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        const creditHour = creditHours[i];
+        const gradePoint = creditHoursLookup[creditHour][grades[i]];
+        totalGradePoints += gradePoint;
+        totalCreditHours += creditHour;
+    }
+
+    // Calculate GPA
+    const gpa = totalGradePoints / totalCreditHours;
+
+    // Display the result
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = `Cumulative GPA: ${gpa.toFixed(2)}`;
+}
+
+  </script>
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #33cccc;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #444444;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #33cccc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a8c8c;
+}
+
+#result {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #33cccc;
+    margin-top: 30px;
+}
+
+</style>
+
+</body>
+</html>

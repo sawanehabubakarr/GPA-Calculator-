@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+    <body>
+        <h1>Welcome to the GPA Calculator</h1>
+
+        <img  src="UniMak-WEB.png" alt="CS LOGO" style="width: 420px;" >
+
+        <form id="departmentForm">
+            <label for="department">Select Your Department:</label>
+                <select id="department" name="department">
+
+                    <!-- Department Options -->
+                    <option value="">-- Select Department --</option>
+                    <option value="Accounting & Finance">Accounting & Finance</option>
+                    <option value="Agric & Food Sciences">Agric & Food Sciences</option>
+                    <option value="Agric & Food Technology">Agric & Food Technology</option>
+                    <option value="Banking & Finance">Banking & Finance</option>
+                    <option value="Business Administration & Mgt.">Business Administration & Mgt.</option>
+                    <option value="">Clinical Psychology</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Development studies">Development studies</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Human Resource Mgt.">Human Resource Mgt.</option>
+                    <option value="Law">Law</option>
+                    <option value="Mass Communication">Mass Communication</option>
+                    <option value="Political Sci. & Int. Relations">Political Sci. & Int. Relations</option>
+                    <option value="Pro., Logistics, & Supply Ch. Mgt.">Pro., Logistics, & Supply Ch. Mgt.</option>
+                    <option value="Public Admin & Mgt. B.Ed. Education">Public Admin & Mgt. B.Ed. Education</option>
+                    <option value="Public Health">Public Health</option>
+                    <option value="Social Work">Social Work</option>
+                </select>
+
+             <!-- Semester Options -->
+            <label for="semester">Select Your Semester:</label>
+            <select id="semester" name="semester">
+                <option value="">-- Select Semester --</option>
+                <option value="Sem1">Year 1 Semester 1</option>
+                <option value="Sem2">Year 1 Semester 2</option>
+                <option value="Sem3">Year 2 Semester 1</option>
+                <option value="Sem4">Year 2 Semester 2</option>
+                <option value="Sem5">Year 3 Semester 1</option>
+                <option value="Sem6">Year 3 Semester 2</option>
+                <option value="Sem7">Year 4 Semester 1</option>
+                <option value="Sem8">Year 4 Semester 2</option>    
+            </select>
+
+
+            <button type="button" onclick="loadSemesterPage()">Submit</button>
+            
+        </form>
+  <h6>Powered By SawTech</h6>
+<img  src="SawTech.png" alt="CS LOGO" style="width: 220px;" >
+
+    <script>
+            function loadSemesterPage() {
+            const department = document.getElementById("department").value;
+            const semester = document.getElementById("semester").value;
+
+            if (department && semester) {
+             const pageURL = `${department} ${semester}.html`;
+              window.location.href = pageURL;
+             }
+                }
+
+    </script>
+</body>
+</html>
