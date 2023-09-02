@@ -232,10 +232,33 @@ function calculateTotalGPA() {
     const gpaSem1 = parseFloat(document.getElementById("result").textContent.split(' ')[2]);
     const gpaSem2 = parseFloat(document.getElementById("resultSEM2").textContent.split(' ')[2]);
 
-    // Calculate the total GPA
+    // Calculate the total GPA as an average of the two semesters
     const totalGPA = (gpaSem1 + gpaSem2) / 2;
 
     // Display the total GPA
     const totalGPAElement = document.getElementById("totalGPA");
     totalGPAElement.innerHTML = `Total GPA: ${totalGPA.toFixed(2)}`;
+
+    // Create a chart to visualize GPA data
+    const ctx = document.getElementById("gpaChart").getContext("2d");
+    const chart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Semester 1", "Semester 2", "Total GPA"],
+            datasets: [{
+                label: "GPA",
+                data: [gpaSem1, gpaSem2, totalGPA],
+                backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
+                borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+                borderWidth: 1,
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
 }
