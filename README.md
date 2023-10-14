@@ -1,2 +1,2 @@
 # GPA-Calculator-
-Computer GPA Calculator
+Developed by Abubakarr Sawaneh 
