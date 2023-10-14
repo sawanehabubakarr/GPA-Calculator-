@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    color: #33cccc;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #444444;
+    font-family: El Messiri;
+    padding-top: 12px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #33cccc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: GothicE;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a8c8c;
+}
+
+/* Your existing CSS styles */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    color: #33cccc;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #444444;
+    font-family: El Messiri;
+    padding-top: 12px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #33cccc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: GothicE;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a8c8c;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    
+    form {
+        max-width: 90%;  /* This will make the form slightly smaller, providing padding on both sides */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjusts the size of the h1 for smaller screens */
+    }
+
+    /* Adjust the size of the images on smaller screens for better layout */
+    img {
+        width: 90%;
+    }
+
+    /* Adjust button's font size for better visibility on smaller screens */
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Media query for medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+    form {
+        max-width: 80%;  /* This will make the form slightly larger for tablet view */
+    }
+    
+    /* Adjust other styles as needed for tablet view */
+}
