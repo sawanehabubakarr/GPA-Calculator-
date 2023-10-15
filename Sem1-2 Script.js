@@ -232,6 +232,12 @@ function calculateTotalGPA() {
     const gpaSem1 = parseFloat(document.getElementById("result").textContent.split(' ')[2]);
     const gpaSem2 = parseFloat(document.getElementById("resultSEM2").textContent.split(' ')[2]);
 
+        // Calculate the total GPA as an average of the two semesters
+    const TGPA = (gpaSem1 + gpaSem2) / 2;
+
+    // Display the total GPA
+   document.getElementById("totalGPA").innerHTML = `Total GPA: ${TGPA.toFixed(2)}`;
+    
     // Get the existing chart (if any)
     const existingChart = Chart.getChart("gpaChart");
 
